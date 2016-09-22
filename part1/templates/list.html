@@ -1,0 +1,12 @@
+<html>
+<body>
+<div style="color:blue;">
+    <ul>
+        {% import 'macro.html' as macros %}
+        {% for l in lists %}
+            {{macros.render_list(l)}}
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
