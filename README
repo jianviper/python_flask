@@ -1,0 +1,4 @@
+2016-10-12
+优化base.html，继承了bootstrap/base.html
+新增404.html,500.html
+新增.ico文件，给网站定义了图标
