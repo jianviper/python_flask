@@ -2,11 +2,11 @@
 
 {% block title %}Flasky{% endblock %}
 
-{% block head%}
+{% block head %}
 {{super()}}
 <link rel="shortcut icon" href="{{url_for('static',filename='1.ico')}}" type="image/x-icon">
 <link rel="icon" href="{{url_for('static',filename='2.ico')}}" type="image/x-icon">
-{% endblock%}
+{% endblock %}
 
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">
@@ -24,7 +24,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/apitest">API</a></li>
-                <li><a href="/apitest">Form</a></li>
+                <li><a href="/form">Form</a></li>
             </ul>
         </div>
     </div>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Index{% endblock %}
+
+{% block page_content %}
+	<div class="page-header">
+{#		<form method="post">
+			{{ form.hidden_tag() }}
+			{{ form.name.label }} {{ form.name(id='my-text-field') }}
+			{{ form.submit() }}
+		</form>#}
+	<h1>Hello,{% if name %}{{ name }}
+	{% else %}Strange
+	{% endif %}!</h1>
+	</div>
+	{{ wtf.quick_form(form) }}
+{% endblock %}
