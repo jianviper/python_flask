@@ -5,6 +5,7 @@ from flask_script import Manager
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 import wtforms as wtfs
+from form import ApiForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
@@ -43,7 +44,7 @@ def lists():
 @app.route('/form', methods=['GET', 'POST'])
 def form1():
 	print 'session:%s' % session
-	form = NameFrom()
+	form = ApiForm()
 	if form.validate_on_submit():
 		session['name'] = form.name.data
 		session['flag'] = time.time()
@@ -52,7 +53,7 @@ def form1():
 		return render_template('form.html', form=form, name=None)
 	elif time.time() - float(session['flag']) > 1.0:
 		return render_template('form.html', form=form, name=None)
-
+	
 	return render_template('form.html', form=form, name=session.get('name'))
 
 
@@ -66,12 +67,6 @@ def internal_server_error(e):
 	return render_template('500.html'), 500
 
 
-class NameFrom(FlaskForm):
-	name = wtfs.StringField('what is your name?', validators=[wtfs.validators.DataRequired()])
-	text = wtfs.StringField('', validators=[wtfs.validators.DataRequired()])
-	submit = wtfs.SubmitField('submit')
-
-
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', debug=True)
+	app.run(debug=True)
 #app.run(debug=True)
