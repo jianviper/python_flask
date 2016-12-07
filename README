@@ -1,3 +1,6 @@
+2016-11-22
+将表单类单独移出到一个Py中
+
 2016-11-2
 新增form.html，继承了bootstrap/wtf.html
 使用wtf.quick_form()

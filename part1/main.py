@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import time
-from flask import Flask, request, make_response, redirect, abort, render_template, session, url_for
+from flask import *
 from flask_script import Manager
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
